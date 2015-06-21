@@ -54,26 +54,26 @@
 			<width>1000</width>
 			<!-- Height is inherited -->
 			<include>Window_OpenClose_Animation</include>
-			<control type="togglebutton" id="1">
+		  <control type="button">
 				<left>0l</left>
 				<top>100</top>
 				<width>100</width>
 				<height>100</height>
 				<texturefocus border="5">floor_buttonFO.png</texturefocus>
 				<texturenofocus border="5">floor_button.png</texturenofocus>
-				<onclick>Skin.SetPath(Setting.CastizerPath)</onclick>
+				<onclick>Skin.SetPath(Setting.CastizerImageFolder)</onclick>
 			</control>
-			<control type="label" id="1">
+			<control type="label">
 				<description>My First label</description>
 				<left>100l</left>
 				<top>100</top>
-				<width>500</width>
+				<width>1000</width>
 				<height>100</height>
 				<visible>true</visible>
 				<align>left</align>
 				<aligny>center</aligny>
 				<scroll>false</scroll>
-				<label>$INFO[Skin.String(Setting.CastizerPath)]</label>
+				<label>$INFO[Skin.String(Setting.CastizerImageFolder)]</label>
 				<font>font14</font>
 				<textcolor>FFB2D4F5</textcolor>
 				<shadowcolor>ff000000</shadowcolor>
@@ -88,7 +88,26 @@
 				<height>100</height>
 				<texturefocus border="5">floor_buttonFO.png</texturefocus>
 				<texturenofocus border="5">floor_button.png</texturenofocus>
+				<onclick>Skin.SetPath(Setting.CastizerPlaylist)</onclick>				
 			</control>
+			<control type="label">
+				<description>My First label</description>
+				<left>100l</left>
+				<top>300</top>
+				<width>1000</width>
+				<height>100</height>
+				<visible>true</visible>
+				<align>left</align>
+				<aligny>center</aligny>
+				<scroll>false</scroll>
+				<label>$INFO[Skin.String(Setting.CastizerPlaylist)]</label>
+				<font>font14</font>
+				<textcolor>FFB2D4F5</textcolor>
+				<shadowcolor>ff000000</shadowcolor>
+				<wrapmultiline>false</wrapmultiline>
+				<scrollspeed>50</scrollspeed>
+				<scrollsuffix> - </scrollsuffix>
+		  </control>
 			<control type="button">
 				<left>0l</left>
 				<top>500</top>
@@ -125,8 +144,9 @@
 				<height>100</height>
 				<texturefocus border="5">floor_buttonFO.png</texturefocus>
 				<texturenofocus border="5">floor_button.png</texturenofocus>
-				<onclick>Notification(ActionVar:,33)</onclick>
-				<onclick>Skin.SetImage(Setting.CastizerImage)</onclick>
+	<onclick>Notification(ActionVar:,$INFO[Skin.String(Setting.CastizerPlaylist)])</onclick>
+			<onclick>PlayMedia($INFO[Skin.String(Setting.CastizerPlaylist)])</onclick>				
+
 			</control>
 			<control type="button" id="6">
 				<right>0r</right>
