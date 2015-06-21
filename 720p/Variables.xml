@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<includes>
+    <constant name="castizo">50</constant>
+	<variable name="castizerString">
+   	    <value>/Users/pgarcia/workspace/castizer_data/images/1.jpg</value>
+	</variable>
+	<variable name="playlistRock">
+   	    <value>"/Users/pgarcia/workspace/castizer_data/music/playlists/rock/"</value>
+	</variable>
+</includes>
+  

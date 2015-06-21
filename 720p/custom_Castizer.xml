@@ -5,7 +5,7 @@
 	<controls>
 
 		<variable name="castpath">
-			<value>/Users/pgarcia/workspace/castizer_data/images/2.jpg</value>
+			<value>/Users/pgarcia/workspace/castizer_data/images/1.jpg</value>
 		</variable>
 		<include>CommonBackground</include>
 		<include>castpath</include>
@@ -14,7 +14,7 @@
 			<description>My pic !</description>
 			<left>0</left>
 			<top>0</top>
-		  	<imagepath>/Users/pgarcia/workspace/castizer_data/images/</imagepath>
+		  	<imagepath>$INFO[Skin.String(Setting.CastizerPath)]</imagepath>
  			<timeperimage>5000</timeperimage>
 		  	<fadetime>5000</fadetime>
 		  	<randomize>true</randomize>
@@ -29,7 +29,7 @@
 			<width>300</width>
 			<height>200</height>
 			<aspectratio>scale</aspectratio>
-			<texture>/Users/pgarcia/workspace/castizer_data/images/1.jpg</texture>
+			<texture>$INFO[Skin.String(Setting.CastizerImage)]</texture>
 			<include>VisibleFadeEffect</include>
 		</control>
 		<include>Clock</include>
@@ -51,7 +51,7 @@
 		<control type="group" id="136">
 			<left>0</left>
 			<top>0</top>
-			<width>200</width>
+			<width>1000</width>
 			<!-- Height is inherited -->
 			<include>Window_OpenClose_Animation</include>
 			<control type="togglebutton" id="1">
@@ -61,8 +61,27 @@
 				<height>100</height>
 				<texturefocus border="5">floor_buttonFO.png</texturefocus>
 				<texturenofocus border="5">floor_button.png</texturenofocus>
+				<onclick>Skin.SetPath(Setting.CastizerPath)</onclick>
 			</control>
-			<control type="button">
+			<control type="label" id="1">
+				<description>My First label</description>
+				<left>100l</left>
+				<top>100</top>
+				<width>500</width>
+				<height>100</height>
+				<visible>true</visible>
+				<align>left</align>
+				<aligny>center</aligny>
+				<scroll>false</scroll>
+				<label>$INFO[Skin.String(Setting.CastizerPath)]</label>
+				<font>font14</font>
+				<textcolor>FFB2D4F5</textcolor>
+				<shadowcolor>ff000000</shadowcolor>
+				<wrapmultiline>false</wrapmultiline>
+				<scrollspeed>50</scrollspeed>
+				<scrollsuffix> - </scrollsuffix>
+		  </control>
+		  <control type="button">
 				<left>0l</left>
 				<top>300</top>
 				<width>100</width>
@@ -93,8 +112,12 @@
 				<height>100</height>
 				<texturefocus border="5">floor_buttonFO.png</texturefocus>
 				<texturenofocus border="5">floor_button.png</texturenofocus>
+<onclick>PlayerControl(stop)</onclick>
 				<onclick>Notification(Action:,Button 4)</onclick>
 			</control>
+			<variable name="VarTest">
+				<value>XXX</value>
+			</variable>
 			<control type="button" id="5">
 				<right>0r</right>
 				<top>300</top>
@@ -102,7 +125,8 @@
 				<height>100</height>
 				<texturefocus border="5">floor_buttonFO.png</texturefocus>
 				<texturenofocus border="5">floor_button.png</texturenofocus>
-				<onclick>Notification(Action:,Button Pressed !)</onclick>
+				<onclick>Notification(ActionVar:,33)</onclick>
+				<onclick>Skin.SetImage(Setting.CastizerImage)</onclick>
 			</control>
 			<control type="button" id="6">
 				<right>0r</right>
@@ -112,8 +136,10 @@
 				<texturefocus border="5">floor_buttonFO.png</texturefocus>
 				<texturenofocus border="5">floor_button.png</texturenofocus>
 				<onclick>Notification(Action:,Test...)</onclick>				
-<onclick>PlayMedia(/Users/pgarcia/workspace/castizer_data/music/playlists/rock/)</onclick>
+				<onclick>PlayMedia($VAR[playlistRock])</onclick>
 			</control>
+
+
 		</control>
 
 </controls>	
