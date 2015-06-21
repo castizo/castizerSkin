@@ -93,6 +93,7 @@
 				<height>100</height>
 				<texturefocus border="5">floor_buttonFO.png</texturefocus>
 				<texturenofocus border="5">floor_button.png</texturenofocus>
+				<onclick>Notification(Action:,Button 4)</onclick>
 			</control>
 			<control type="button" id="5">
 				<right>0r</right>
