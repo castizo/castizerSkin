@@ -23,13 +23,13 @@
 		</control>
 
 		<control type="image">
-			<description>My pic !</description>
-			<left>0</left>
+			<description>LOGO</description>
+			<left>450</left>
 			<top>0</top>
-			<width>300</width>
-			<height>200</height>
+			<width>430</width>
+			<height>100</height>
 			<aspectratio>scale</aspectratio>
-			<texture>$INFO[Skin.String(Setting.CastizerImage)]</texture>
+			<texture>$INFO[Skin.String(Setting.CastizerLogo)]</texture>
 			<include>VisibleFadeEffect</include>
 		</control>
 		<include>Clock</include>
@@ -61,62 +61,33 @@
 				<top>100</top>
 				<width>100</width>
 				<height>100</height>
+				<label>-1-</label>
 				<texturefocus border="5">floor_buttonFO.png</texturefocus>
 				<texturenofocus border="5">floor_button.png</texturenofocus>
-				<onclick>Skin.SetPath(Setting.CastizerImageFolder)</onclick>
+<onclick>Notification(ActionVar:,$INFO[Skin.String(Setting.CastizerPlaylist)]1/)</onclick>
+			<onclick>PlayMedia($INFO[Skin.String(Setting.CastizerPlaylist)]1/)</onclick>				
 			</control>
-			<control type="label">
-				<description>My First label</description>
-				<left>100l</left>
-				<top>100</top>
-				<width>1000</width>
-				<height>100</height>
-				<visible>true</visible>
-				<align>left</align>
-				<aligny>center</aligny>
-				<scroll>false</scroll>
-				<label>$INFO[Skin.String(Setting.CastizerImageFolder)]</label>
-				<font>font14</font>
-				<textcolor>FFB2D4F5</textcolor>
-				<shadowcolor>ff000000</shadowcolor>
-				<wrapmultiline>false</wrapmultiline>
-				<scrollspeed>50</scrollspeed>
-				<scrollsuffix> - </scrollsuffix>
-		  </control>
 		  <control type="button">
 				<left>0l</left>
 				<top>300</top>
 				<width>100</width>
 				<height>100</height>
+				<label>-2-</label>
 				<texturefocus border="5">floor_buttonFO.png</texturefocus>
 				<texturenofocus border="5">floor_button.png</texturenofocus>
-				<onclick>Skin.SetPath(Setting.CastizerPlaylist)</onclick>				
+<onclick>Notification(ActionVar:,$INFO[Skin.String(Setting.CastizerPlaylist)]2/)</onclick>
+			<onclick>PlayMedia($INFO[Skin.String(Setting.CastizerPlaylist)]2/)</onclick>				
 			</control>
-			<control type="label">
-				<description>My First label</description>
-				<left>100l</left>
-				<top>300</top>
-				<width>1000</width>
-				<height>100</height>
-				<visible>true</visible>
-				<align>left</align>
-				<aligny>center</aligny>
-				<scroll>false</scroll>
-				<label>$INFO[Skin.String(Setting.CastizerPlaylist)]</label>
-				<font>font14</font>
-				<textcolor>FFB2D4F5</textcolor>
-				<shadowcolor>ff000000</shadowcolor>
-				<wrapmultiline>false</wrapmultiline>
-				<scrollspeed>50</scrollspeed>
-				<scrollsuffix> - </scrollsuffix>
-		  </control>
 			<control type="button">
 				<left>0l</left>
 				<top>500</top>
 				<width>100</width>
 				<height>100</height>
+				<label>-3-</label>
 				<texturefocus border="5">floor_buttonFO.png</texturefocus>
 				<texturenofocus border="5">floor_button.png</texturenofocus>
+<onclick>Notification(ActionVar:,$INFO[Skin.String(Setting.CastizerPlaylist)]3/)</onclick>
+			<onclick>PlayMedia($INFO[Skin.String(Setting.CastizerPlaylist)]3/)</onclick>				
 			</control>
 			<control type="button">
 				<left>300l</left>
@@ -125,7 +96,6 @@
 				<height>100</height>
 				<texturefocus border="5">floor_buttonFO.png</texturefocus>
 				<texturenofocus border="5">floor_button.png</texturenofocus>
-				<onclick>Notification(Launching:,Test Window...)</onclick>				
 				<onclick>ActivateWindow(1115)</onclick>
 			</control>
 			
@@ -143,10 +113,11 @@
 				<top>100</top>
 				<width>100</width>
 				<height>100</height>
+				<label>-4-</label>
 				<texturefocus border="5">floor_buttonFO.png</texturefocus>
 				<texturenofocus border="5">floor_button.png</texturenofocus>
-<onclick>PlayerControl(stop)</onclick>
-				<onclick>Notification(Action:,Button 4)</onclick>
+<onclick>Notification(ActionVar:,$INFO[Skin.String(Setting.CastizerPlaylist)]4/)</onclick>
+			<onclick>PlayMedia($INFO[Skin.String(Setting.CastizerPlaylist)]4/)</onclick>				
 			</control>
 			<variable name="VarTest">
 				<value>XXX</value>
@@ -156,10 +127,11 @@
 				<top>300</top>
 				<width>100</width>
 				<height>100</height>
+				<label>-5-</label>
 				<texturefocus border="5">floor_buttonFO.png</texturefocus>
 				<texturenofocus border="5">floor_button.png</texturenofocus>
-	<onclick>Notification(ActionVar:,$INFO[Skin.String(Setting.CastizerPlaylist)]rock/)</onclick>
-			<onclick>PlayMedia($INFO[Skin.String(Setting.CastizerPlaylist)])</onclick>				
+<onclick>Notification(ActionVar:,$INFO[Skin.String(Setting.CastizerPlaylist)]5/)</onclick>
+			<onclick>PlayMedia($INFO[Skin.String(Setting.CastizerPlaylist)]5/)</onclick>				
 
 			</control>
 			<control type="button" id="6">
@@ -167,20 +139,34 @@
 				<top>500</top>
 				<width>100</width>
 				<height>100</height>
+				<label>-6-</label>
 				<texturefocus border="5">floor_buttonFO.png</texturefocus>
 				<texturenofocus border="5">floor_button.png</texturenofocus>
-				<onclick>Notification(Action:,Test...)</onclick>				
-				<onclick>PlayMedia($VAR[playlistRock])</onclick>
+<onclick>Notification(ActionVar:,$INFO[Skin.String(Setting.CastizerPlaylist)]6/)</onclick>
+			<onclick>PlayMedia($INFO[Skin.String(Setting.CastizerPlaylist)]6/)</onclick>				
 			</control>
 
+			<!-- STOP button -->
 			<control type="button" id="7">
+				<right>-600r</right>
+				<top>650</top>
+				<width>100</width>
+				<height>100</height>
+				<label>STOP</label>
+				<texturefocus border="5">floor_buttonFO.png</texturefocus>
+				<texturenofocus border="5">floor_button.png</texturenofocus>
+				<onclick>Notification(Action:,Stop!)</onclick>				
+				<onclick>PlayerControl(Stop)</onclick>
+			</control>
+
+			<!-- Calling Kodi home -->
+			<control type="button" id="8">
 				<right>-300r</right>
 				<top>650</top>
 				<width>100</width>
 				<height>100</height>
 				<texturefocus border="5">floor_buttonFO.png</texturefocus>
 				<texturenofocus border="5">floor_button.png</texturenofocus>
-				<onclick>Notification(Launching:,Test Window...)</onclick>				
 				<onclick>ActivateWindow(1114)</onclick>
 			</control>
 

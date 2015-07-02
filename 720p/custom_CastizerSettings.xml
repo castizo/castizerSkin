@@ -4,14 +4,6 @@
 	<controls>
 		<include>CommonBackground</include>
 		<control type="image">
-			<left>0</left>
-			<top>100r</top>
-			<width>1280</width>
-			<height>100</height>
-			<texture>floor.png</texture>
-			<include>VisibleFadeEffect</include>
-		</control>
-		<control type="image">
 			<description>Section header image</description>
 			<left>20</left>
 			<top>3</top>
@@ -30,7 +22,7 @@
 			<itemgap>5</itemgap>
 			<control type="label">
 				<include>WindowTitleCommons</include>
-				<label>$LOCALIZE[20077]</label>
+				<label>Castizer Settings</label>
 			</control>
 			<control type="label">
 				<include>WindowTitleCommons</include>
@@ -167,12 +159,12 @@
 				</focusedlayout>
 				<content>
 					<item id="1">
-						<label>128</label>
+						<label>Castizer</label>
 						<label2>5</label2>
 						<onclick>noop</onclick>
 					</item>
 					<item id="2">
-						<label>31964</label>
+						<label>Other</label>
 						<label2>5</label2>
 						<onclick>noop</onclick>
 					</item>
@@ -360,6 +352,7 @@
 						<texturenofocus>MenuItemNF.png</texturenofocus>
 					</control>
 				</control>
+				
 				<control type="scrollbar" id="61">
 					<left>1060</left>
 					<top>60</top>
