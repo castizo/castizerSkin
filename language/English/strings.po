@@ -709,3 +709,36 @@ msgstr ""
 msgctxt "#31963"
 msgid "TEST"
 msgstr ""
+
+msgctxt "#31964"
+msgid "Castizer"
+msgstr ""
+
+msgctxt "#31965"
+msgid "Slideshow settings"
+msgstr ""
+
+msgctxt "#31966"
+msgid ""
+msgstr ""
+
+msgctxt "#31967"
+msgid ""
+msgstr ""
+
+msgctxt "#31968"
+msgid ""
+msgstr ""
+
+msgctxt "#31969"
+msgid ""
+msgstr ""
+
+msgctxt "#31970"
+msgid ""
+msgstr ""
+
+msgctxt "#31971"
+msgid ""
+msgstr ""
+
