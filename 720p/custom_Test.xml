@@ -1099,7 +1099,7 @@
 				<height>45</height>
 				<label>1036</label>
 				<font>-</font>
-				<onclick>ActivateWindow(1113)</onclick>
+				<onclick>ActivateWindow(10134)</onclick>
 				<texturefocus border="5">floor_buttonFO.png</texturefocus>
 				<texturenofocus border="5">floor_button.png</texturenofocus>
 				<onleft>20</onleft>

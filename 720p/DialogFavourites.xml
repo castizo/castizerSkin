@@ -106,6 +106,23 @@
 					</control>
 				</focusedlayout>
 			</control>
+			
+<!-- 			Testing castizer -->
+			<control type="label">
+				<description>Page label</description>
+				<right>30</right>
+				<top>570</top>
+				<width>350</width>
+				<height>30</height>
+				<align>right</align>
+				<aligny>center</aligny>
+				<font>font12</font>
+				<textcolor>grey</textcolor>
+<!-- 				<label>hola</label> -->
+ 				<label>$INFO[Container(450).ListItem(1).Path]</label>
+			</control>
+
+			
 			<control type="label">
 				<description>Page label</description>
 				<right>30</right>

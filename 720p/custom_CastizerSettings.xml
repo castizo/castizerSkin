@@ -72,6 +72,7 @@
 				<ondown>1</ondown>
 				<visible>system.getbool(input.enablemouse)</visible>
 			</control>
+<!-- 
 			<control type="image">
 				<description>LOGO</description>
 				<left>30</left>
@@ -81,6 +82,7 @@
 				<aspectratio>keep</aspectratio>
 				<texture>Confluence_Logo.png</texture>
 			</control>
+ -->
 			<control type="list" id="9000">
 				<left>10</left>
 				<top>90</top>
@@ -164,7 +166,8 @@
 						<onclick>noop</onclick>
 					</item>
 					<item id="2">
-						<label>Other</label>
+					<visible>Skin.HasSetting(Setting.CastizerEnableDebug)</visible>
+						<label>Debug</label>
 						<label2>5</label2>
 						<onclick>noop</onclick>
 					</item>
@@ -236,7 +239,36 @@
 						<texturefocus>MenuItemFO.png</texturefocus>
 						<texturenofocus>MenuItemNF.png</texturenofocus>
 					</control>
-					<control type="label" id="109">
+					<!--	Enable playlist at startup -->
+					<control type="radiobutton" id="109">
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<label>21398</label>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>Skin.ToggleSetting(Use_Startup_Playlist)</onclick>
+						<selected>Skin.HasSetting(Use_Startup_Playlist)</selected>
+					</control>
+					<!--	Select the playlist -->
+					<control type="button" id="113">
+						<description>Startup Playlist Path</description>
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<label>15311</label>
+						<label2>$INFO[Skin.String(Startup_Playlist_Path)]</label2>						<onclick>Skin.SetFile(Startup_Playlist_Path,,special://MusicPlaylists/)</onclick>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<enable>Skin.HasSetting(Use_Startup_Playlist)</enable>
+					</control>
+					
+					
+					<control type="label" id="114">
 						<width>750</width>
 						<height>45</height>
 						<font>font13_title</font>
@@ -246,8 +278,9 @@
 						<align>left</align>
 						<aligny>center</aligny>
 					</control>
+
 					<!--	Select the image folder -->
-					<control type="button" id="110">
+					<control type="button" id="115">
 						<description>Startup Playlist Path</description>
 						<width>750</width>
 						<height>40</height>
@@ -260,7 +293,7 @@
 						<texturefocus>MenuItemFO.png</texturefocus>
 						<texturenofocus>MenuItemNF.png</texturenofocus>
 					</control>
-					<control type="label" id="106">
+					<control type="label" id="116">
 						<width>750</width>
 						<height>45</height>
 						<font>font13_title</font>
@@ -270,33 +303,20 @@
 						<align>left</align>
 						<aligny>center</aligny>
 					</control>
-					<control type="radiobutton" id="111">
+					<!--	Enable Debug options -->
+					<control type="radiobutton" id="117">
 						<width>750</width>
 						<height>40</height>
 						<font>font13</font>
-						<label>21398</label>
+						<label>Enable debug options</label>
 						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
 						<texturenofocus>MenuItemNF.png</texturenofocus>
-						<onclick>Skin.ToggleSetting(Setting.CastizerUseCustomPlaylist)</onclick>
-						<selected>Skin.HasSetting(Use_Startup_Playlist)</selected>
+						<onclick>Skin.ToggleSetting(Setting.CastizerEnableDebug)</onclick>
+						<selected>Skin.HasSetting(Setting.CastizerEnableDebug)</selected>
 					</control>
-					<!--	Select the playlist -->
-					<control type="button" id="112">
-						<description>Startup Playlist Path</description>
-						<width>750</width>
-						<height>40</height>
-						<font>font13</font>
-						<textcolor>grey2</textcolor>
-						<focusedcolor>white</focusedcolor>
-						<label>15311</label>
-						<label2>$INFO[Skin.String(Setting.Setting.CastizerUseCustomPlaylist)]</label2>
-						<onclick>Skin.SetPath(Setting.CastizerImageFolder)</onclick>						
-						<texturefocus>MenuItemFO.png</texturefocus>
-						<texturenofocus>MenuItemNF.png</texturenofocus>
-						<enable>Skin.HasSetting(Use_Startup_Playlist)</enable>
-					</control>
+
 				</control>
 				<control type="scrollbar" id="60">
 					<left>1060</left>
@@ -315,7 +335,7 @@
 					<visible>Container(9000).Hasfocus(1)</visible>
 				</control>
 
-<!-- 			Other settings -->
+<!-- 			Debug settings -->
 				<control type="grouplist" id="9002">
 					<visible>Container(9000).Hasfocus(2)</visible>
 					<left>290</left>
@@ -332,25 +352,41 @@
 						<width>750</width>
 						<height>45</height>
 						<font>font13_title</font>
-						<label>31101</label>
+						<label>Debug Options</label>
 						<textcolor>blue</textcolor>
 						<shadowcolor>black</shadowcolor>
 						<align>left</align>
 						<aligny>center</aligny>
 					</control>
 					<control type="radiobutton" id="202">
-						<description>enable video info</description>
+						<description>Shows full menu</description>
 						<width>750</width>
 						<height>40</height>
 						<font>font13</font>
 						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
-						<label>20176</label>
-						<onclick>Skin.ToggleSetting(homepageVideoinfo)</onclick>
-						<selected>!Skin.HasSetting(homepageVideoinfo)</selected>
+						<label>Show full menu</label>
+						<label2>$INFO[Skin.String(Setting.CastizerPlaylist)]</label2>
+<onclick>Skin.ToggleSetting(Setting.CastizerShowFullMenu)</onclick>
+						<selected>!Skin.HasSetting(Setting.CastizerShowFullMenu)</selected>
 						<texturefocus>MenuItemFO.png</texturefocus>
 						<texturenofocus>MenuItemNF.png</texturenofocus>
 					</control>
+					<control type="radiobutton" id="203">
+						<description>Shows music controls</description>
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<label>Show music controls</label>
+						<label2>$INFO[Skin.String(Setting.CastizerPlaylist)]</label2>
+<onclick>Skin.ToggleSetting(Setting.CastizerShowMusicControls)</onclick>
+						<selected>!Skin.HasSetting(Setting.CastizerShowMusicControls)</selected>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+					</control>					
+					
 				</control>
 				
 				<control type="scrollbar" id="61">

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <window>
-	<defaultcontrol always="true">9000</defaultcontrol>
+	<defaultcontrol always="true">1000</defaultcontrol>
 	<allowoverlay>no</allowoverlay>	
 	<controls>
 
@@ -50,11 +50,15 @@
 		</control> 
 		
 		<!-- Three buttons on the left -->
-		<control type="group" id="136">
+		<control type="group" id="1000">
 			<left>0</left>
 			<top>0</top>
 			<width>1000</width>
 			<!-- Height is inherited -->
+			<onleft>2000</onleft>
+			<onright>2000</onright>
+			<onup>1000</onup>
+			<ondown>1000</ondown>
 			<include>Window_OpenClose_Animation</include>
 		  <control type="button" id="1">
 				<left>0l</left>
@@ -62,38 +66,57 @@
 				<width>100</width>
 				<height>100</height>
 				<label>-1-</label>
+				<onleft>2000</onleft>
+				<onright>14</onright>
+				<onup>1</onup>
+				<ondown>2</ondown>				
 				<texturefocus border="5">floor_buttonFO.png</texturefocus>
 				<texturenofocus border="5">floor_button.png</texturenofocus>
-<onclick>Notification(ActionVar:,$INFO[Skin.String(Setting.CastizerPlaylist)]1/)</onclick>
+<onclick>Notification(List:,1)</onclick>
+			<onclick>PlayerControl(RandomOn)</onclick>
 			<onclick>PlayMedia($INFO[Skin.String(Setting.CastizerPlaylist)]1/)</onclick>				
 			</control>
-		  <control type="button">
+		  <control type="button" id="2">
 				<left>0l</left>
 				<top>300</top>
 				<width>100</width>
 				<height>100</height>
 				<label>-2-</label>
+				<onleft>2000</onleft>
+				<onright>15</onright>
+				<onup>1</onup>
+				<ondown>3</ondown>				
 				<texturefocus border="5">floor_buttonFO.png</texturefocus>
 				<texturenofocus border="5">floor_button.png</texturenofocus>
-<onclick>Notification(ActionVar:,$INFO[Skin.String(Setting.CastizerPlaylist)]2/)</onclick>
+<onclick>Notification(List:,2)</onclick>
+			<onclick>PlayerControl(RandomOn)</onclick>
 			<onclick>PlayMedia($INFO[Skin.String(Setting.CastizerPlaylist)]2/)</onclick>				
 			</control>
-			<control type="button">
+			<control type="button" id="3">
 				<left>0l</left>
 				<top>500</top>
 				<width>100</width>
 				<height>100</height>
 				<label>-3-</label>
+				<onleft>2000</onleft>
+				<onright>16</onright>
+				<onup>2</onup>
+				<ondown>17</ondown>				
 				<texturefocus border="5">floor_buttonFO.png</texturefocus>
 				<texturenofocus border="5">floor_button.png</texturenofocus>
-<onclick>Notification(ActionVar:,$INFO[Skin.String(Setting.CastizerPlaylist)]3/)</onclick>
+<onclick>Notification(List:,3)</onclick>
+			<onclick>PlayerControl(RandomOn)</onclick>
 			<onclick>PlayMedia($INFO[Skin.String(Setting.CastizerPlaylist)]3/)</onclick>				
 			</control>
-			<control type="button">
+			<control type="button" id="4">
 				<left>300l</left>
 				<top>650</top>
 				<width>100</width>
 				<height>100</height>
+				<onleft>3</onleft>
+				<onright>2000</onright>
+				<onup>3</onup>
+				<ondown>4</ondown>				
 				<texturefocus border="5">floor_buttonFO.png</texturefocus>
 				<texturenofocus border="5">floor_button.png</texturenofocus>
 				<onclick>ActivateWindow(1115)</onclick>
@@ -102,57 +125,76 @@
 		</control>
 
 		<!-- Three buttons on the right -->
-		<control type="group">
+		<control type="group" id="2000">
 			<right>0</right>
 			<top>0</top>
 			<width>0</width>
 			<!-- Height is inherited -->
 			<include>Window_OpenClose_Animation</include>
-			<control type="button" id="4">
+			<control type="button" id="14">
 				<right>0r</right>
 				<top>100</top>
 				<width>100</width>
 				<height>100</height>
 				<label>-4-</label>
+				<onleft>1</onleft>
+				<onright>1</onright>
+				<onup>14</onup>
+				<ondown>15</ondown>				
 				<texturefocus border="5">floor_buttonFO.png</texturefocus>
 				<texturenofocus border="5">floor_button.png</texturenofocus>
-<onclick>Notification(ActionVar:,$INFO[Skin.String(Setting.CastizerPlaylist)]4/)</onclick>
+<onclick>Notification(List:,4)</onclick>
+			<onclick>PlayerControl(RandomOn)</onclick>
 			<onclick>PlayMedia($INFO[Skin.String(Setting.CastizerPlaylist)]4/)</onclick>				
 			</control>
 			<variable name="VarTest">
 				<value>XXX</value>
 			</variable>
-			<control type="button" id="5">
+			<control type="button" id="15">
 				<right>0r</right>
 				<top>300</top>
 				<width>100</width>
 				<height>100</height>
 				<label>-5-</label>
+				<onleft>2</onleft>
+				<onright>2</onright>
+				<onup>14</onup>
+				<ondown>16</ondown>				
 				<texturefocus border="5">floor_buttonFO.png</texturefocus>
 				<texturenofocus border="5">floor_button.png</texturenofocus>
-<onclick>Notification(ActionVar:,$INFO[Skin.String(Setting.CastizerPlaylist)]5/)</onclick>
+			<onclick>Notification(List:,5)</onclick>
+			<onclick>PlayerControl(RandomOn)</onclick>
 			<onclick>PlayMedia($INFO[Skin.String(Setting.CastizerPlaylist)]5/)</onclick>				
 
 			</control>
-			<control type="button" id="6">
+			<control type="button" id="16">
 				<right>0r</right>
 				<top>500</top>
 				<width>100</width>
 				<height>100</height>
 				<label>-6-</label>
+				<onleft>3</onleft>
+				<onright>3</onright>
+				<onup>15</onup>
+				<ondown>17</ondown>				
 				<texturefocus border="5">floor_buttonFO.png</texturefocus>
 				<texturenofocus border="5">floor_button.png</texturenofocus>
-<onclick>Notification(ActionVar:,$INFO[Skin.String(Setting.CastizerPlaylist)]6/)</onclick>
+<onclick>Notification(List:,6)</onclick>
+			<onclick>PlayerControl(RandomOn)</onclick>
 			<onclick>PlayMedia($INFO[Skin.String(Setting.CastizerPlaylist)]6/)</onclick>				
 			</control>
 
 			<!-- STOP button -->
-			<control type="button" id="7">
+			<control type="button" id="17">
 				<right>-600r</right>
 				<top>650</top>
 				<width>100</width>
 				<height>100</height>
 				<label>STOP</label>
+				<onleft>3</onleft>
+				<onright>16</onright>
+				<onup>16</onup>
+				<ondown>17</ondown>				
 				<texturefocus border="5">floor_buttonFO.png</texturefocus>
 				<texturenofocus border="5">floor_button.png</texturenofocus>
 				<onclick>Notification(Action:,Stop!)</onclick>				
@@ -160,21 +202,47 @@
 			</control>
 
 			<!-- Calling Kodi home -->
-			<control type="button" id="8">
+			<control type="button" id="18">
 				<right>-300r</right>
 				<top>650</top>
 				<width>100</width>
 				<height>100</height>
+				<onleft>1000</onleft>
+				<onright>2000</onright>
+				<onup>17</onup>
+				<ondown>19</ondown>				
 				<texturefocus border="5">floor_buttonFO.png</texturefocus>
 				<texturenofocus border="5">floor_button.png</texturenofocus>
 				<onclick>ActivateWindow(1114)</onclick>
+				<visible>!Skin.HasSetting(Setting.CastizerShowFullMenu)</visible>
+			</control>
+
+			<!-- Test button xxx -->
+			<control type="button" id="19">
+				<right>-150r</right>
+				<top>650</top>
+				<width>100</width>
+				<height>100</height>
+				<onleft>1000</onleft>
+				<onright>2000</onright>
+				<onup>17</onup>
+				<ondown>19</ondown>				
+				<texturefocus border="5">floor_buttonFO.png</texturefocus>
+				<texturenofocus border="5">floor_button.png</texturenofocus>
+				<onclick>Notification(castizer, special://profile/playlists/)</onclick>
+		<onclick>RunScript(/Users/pgarcia/workspace/castizer_data/pablo.py)</onclick>
+		
+<!-- 				<onclick>Playmedia($INFO[Container(450).ListItem(1)])</onclick> -->
+<!-- 	<onclick>Playmedia(&quot;special://profile/playlists/music/wewe.xsp&quot;) -->
+	
 			</control>
 
 		</control>
 
 
 
-		<control type="group">
+		<control type="group" id="3000">
+			<visible>!Skin.HasSetting(Setting.CastizerShowMusicControls)</visible>
 			<description>Controls for currently playing media</description>
 			<left>545r</left>
 			<top>370</top>
@@ -293,7 +361,8 @@
 						<onclick>PlayerControl(Next)</onclick>
 					</control>
 				</control>
-				<control type="group" id="600">
+				
+				<control type="group" id="700">
 					<visible>VideoPlayer.Content(LiveTV)</visible>
 					<control type="button" id="601">
 						<left>10</left>
