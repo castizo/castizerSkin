@@ -1,3 +1,3 @@
-# castizerSkin
-# This is the readme file by pableras
+castizerSkin
+# This project implements castizer over Kodi.
 
